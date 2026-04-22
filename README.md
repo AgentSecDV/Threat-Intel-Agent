@@ -4,6 +4,8 @@
 
 A Python-based threat intelligence tool that analyzes IP addresses using multiple intelligence sources and generates SOC-style analyst reports.
 
+Built to simulate real-world SOC triage workflows and threat intelligence correlation.
+
 ## Example Output
 
 Assessment: HIGH  
