@@ -22,6 +22,30 @@ A SOC-style threat intelligence platform for analyzing IPs, domains, and URLs us
 - Risk + Confidence + Priority scoring
 - AI-generated analyst reports
 
+---
+
+## ⚙️ Key Features
+
+- SOC-style threat analysis workflow
+- Multi-source intelligence enrichment
+- Heuristic-based detection logic
+- DNS & RDAP domain intelligence
+- Historical IOC tracking & trend analysis
+- Streamlit-based interactive dashboard
+
+---
+
+## 🧠 How It Works
+
+The agent follows a layered enrichment pipeline:
+
+1. IOC Type Detection (IP, Domain, URL)
+2. URL Pattern Analysis (heuristics)
+3. Domain Intelligence (DNS + RDAP)
+4. IP Enrichment (AbuseIPDB, VirusTotal)
+5. Risk Scoring Engine
+6. AI-generated analysis and recommendations
+
 ## 📸 Mk2 Dashboard Preview
 
 ### 🟢 Low-Risk Domain Analysis
@@ -63,3 +87,4 @@ This project simulates real-world Security Operations Center (SOC) workflows, in
 cd TIAMk2
 pip install -r requirements.txt
 streamlit run dashboard.py
+```
