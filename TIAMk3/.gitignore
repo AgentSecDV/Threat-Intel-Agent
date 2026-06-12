@@ -1,0 +1,5 @@
+.env
+Threat_Intel.txt
+reports.json
+__pycache__/
+*.pyc
