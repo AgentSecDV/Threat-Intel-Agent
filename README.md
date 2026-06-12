@@ -1,90 +1,226 @@
 # 🛡️ Threat Intelligence Agent
 
-A SOC-style threat intelligence platform for analyzing IPs, domains, and URLs using enrichment, scoring, and AI-powered analysis.
+A SOC-style threat intelligence platform built in Python for analyzing IPs, domains, URLs, file hashes, and CVEs using enrichment, scoring, structured memory, and intelligence correlation.
+
+This project simulates real-world Security Operations Center (SOC) workflows used for IOC triage, threat detection, vulnerability intelligence, and analyst reporting.
 
 ---
 
-## 🚀 Project Evolution
+## 🚀 Current Version: Mk3
+
+📁 Located in: `/TIAMk3`
+
+Threat Intelligence Agent Mk3 expands the project into a multi-IOC threat intelligence dashboard with support for IPs, domains, URLs, hashes, CVEs, OSINT enrichment, MITRE ATT&CK context, batch analysis, and exportable results.
+
+---
+
+## 🧬 Project Evolution
 
 ### 🔹 Mk1
-- IP-based threat intelligence
-- AbuseIPDB + VirusTotal enrichment
-- CLI-based analysis
-- Basic risk scoring
 
-### 🔹 Mk2 (Current)
-📁 Located in `/TIAMk2`
+📁 Earlier version
 
-- Full SOC-style Streamlit dashboard
-- Domain intelligence (DNS + RDAP)
-- URL heuristic analysis (phishing detection)
-- Structured IOC memory tracking
-- Risk + Confidence + Priority scoring
-- AI-generated analyst reports
+* IP-based threat intelligence
+* AbuseIPDB enrichment
+* VirusTotal enrichment
+* CLI-based analysis
+* Basic risk scoring
+* AI-generated analyst summaries
 
 ---
 
-## ⚙️ Key Features
+### 🔹 Mk2
 
-- SOC-style threat analysis workflow
-- Multi-source intelligence enrichment
-- Heuristic-based detection logic
-- DNS & RDAP domain intelligence
-- Historical IOC tracking & trend analysis
-- Streamlit-based interactive dashboard
+📁 Located in: `/TIAMk2`
 
----
-
-## 🧠 How It Works
-
-The agent follows a layered enrichment pipeline:
-
-1. IOC Type Detection (IP, Domain, URL)
-2. URL Pattern Analysis (heuristics)
-3. Domain Intelligence (DNS + RDAP)
-4. IP Enrichment (AbuseIPDB, VirusTotal)
-5. Risk Scoring Engine
-6. AI-generated analysis and recommendations
-
-## 📸 Mk2 Dashboard Preview
-
-### 🟢 Low-Risk Domain Analysis
-<img src="TIAMk2/assets/domain_low_1.png" width="800"/>
-<img src="TIAMk2/assets/domain_low_2.png" width="800"/>
-<img src="TIAMk2/assets/domain_low_3.png" width="800"/>
-<img src="TIAMk2/assets/domain_low_4.png" width="800"/>
+* Streamlit dashboard
+* Domain intelligence
+* DNS and RDAP enrichment
+* URL heuristic analysis
+* Structured IOC memory tracking
+* Risk, confidence, and priority scoring
+* SOC-style report output
 
 ---
 
-### 🟢 Low-Risk IP Analysis
-<img src="TIAMk2/assets/ip_low_1.png" width="800"/>
-<img src="TIAMk2/assets/ip_low_2.png" width="800"/>
-<img src="TIAMk2/assets/ip_low_3.png" width="800"/>
+### 🔹 Mk3 — Current
+
+📁 Located in: `/TIAMk3`
+
+Mk3 adds major SOC-style capabilities, including:
+
+* IP analysis
+* Domain analysis
+* URL analysis
+* File hash analysis
+* CVE / CISA KEV analysis
+* MalwareBazaar hash intelligence
+* URLhaus URL intelligence
+* Spamhaus ZEN IP reputation checks
+* OSINT correlation scoring
+* MITRE ATT&CK context mapping
+* Structured IOC history and trend tracking
+* Batch IOC analysis
+* CSV and JSON batch export
+* Streamlit dashboard interface
 
 ---
 
-### 🔴 High-Risk URL Analysis
-<img src="TIAMk2/assets/url_high_1.png" width="800"/>
-<img src="TIAMk2/assets/url_high_2.png" width="800"/>
+## 🔥 Key Features
+
+* Multi-source IOC enrichment
+* SOC-style risk scoring
+* Confidence scoring
+* Response priority scoring
+* Historical IOC memory
+* Repeat IOC detection
+* Risk trend analysis
+* AI-generated analyst summaries
+* MITRE ATT&CK context mapping
+* Batch analysis dashboard
+* Exportable CSV and JSON results
 
 ---
 
-## 🎯 Purpose
+## 🧾 Supported IOC Types
 
-This project simulates real-world Security Operations Center (SOC) workflows, including:
+Mk3 supports:
 
-- Threat enrichment
-- Detection logic
-- Risk scoring
-- Analyst reasoning
-- Incident triage
+* IP addresses
+* Domains
+* URLs
+* File hashes
+* CVEs
 
 ---
 
-## ⚡ How to Run Mk2
+## 🧠 Intelligence Sources
+
+Mk3 uses multiple enrichment and reputation sources:
+
+* AbuseIPDB
+* VirusTotal
+* MalwareBazaar
+* URLhaus
+* CISA Known Exploited Vulnerabilities Catalog
+* Spamhaus ZEN
+* RDAP
+* DNS
+* Reverse DNS
+* OpenAI API for analyst summaries
+
+---
+
+## 📊 Dashboard Capabilities
+
+The Mk3 Streamlit dashboard includes:
+
+* Single IOC analysis
+* File upload for hash analysis
+* Batch IOC input
+* Uploaded IOC list support
+* Risk, confidence, and priority cards
+* Report context panel
+* Hash intelligence panel
+* MalwareBazaar panel
+* URLhaus panel
+* Spamhaus panel
+* CISA KEV panel
+* MITRE ATT&CK panel
+* Domain intelligence panel
+* Recent IOC history table
+* Batch summary metrics
+* CSV and JSON export buttons
+
+---
+
+## ⚙️ How to Run Mk3
+
+Go into the Mk3 folder:
 
 ```bash
-cd TIAMk2
+cd TIAMk3
+```
+
+Install dependencies:
+
+```bash
 pip install -r requirements.txt
+```
+
+Run the CLI version:
+
+```bash
+python threat_intel_agent_mk3.py
+```
+
+Run the dashboard:
+
+```bash
 streamlit run dashboard.py
 ```
+
+---
+
+## 🔐 Environment Variables
+
+Create a `.env` file inside the Mk3 folder with the following keys:
+
+```env
+ABUSEIPDB_API_KEY=your_abuseipdb_key_here
+VT_API_KEY=your_virustotal_key_here
+OPENAI_API_KEY=your_openai_key_here
+MALWAREBAZAAR_API_KEY=your_malwarebazaar_key_here
+URLHAUS_API_KEY=your_urlhaus_key_here
+```
+
+Never upload your real `.env` file or API keys to GitHub.
+
+---
+
+## 🎯 Project Purpose
+
+This project was built as a cybersecurity portfolio project to demonstrate practical skills in:
+
+* Threat intelligence
+* SOC triage workflows
+* Python automation
+* API integration
+* Indicator enrichment
+* Vulnerability intelligence
+* Malware hash investigation
+* Risk scoring logic
+* Streamlit dashboard development
+* MITRE ATT&CK context mapping
+* Analyst-style reporting
+
+---
+
+## 🚀 Future Enhancements — Mk4 Roadmap
+
+Planned Mk4 improvements include:
+
+* Cleaner user-friendly labels across all dashboard panels
+* Dashboard input redesign
+* More polished UI and layout
+* Loading indicators for all analysis types
+* Optional developer/debug mode
+* Raw data cleanup in expandable sections
+* MITRE ATT&CK TAXII/STIX enrichment
+* Improved report export options
+* Possible API backend or SaaS-style architecture
+
+---
+
+## ⚠️ Disclaimer
+
+This tool is intended for educational, portfolio, and defensive security research purposes.
+
+Threat intelligence results should be reviewed by a human analyst before taking action. Do not rely on a single data source or automated score for production security decisions.
+
+---
+
+## 👤 Author
+
+David Coedo
+Cybersecurity | Threat Detection | SOC Development
